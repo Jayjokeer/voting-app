@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <title>Polling unit results</title>
+</head>
+<body >
+    <h1><center>Live Voting Results</center></h1>
+    <div class="container">
+        <center><div class="well"><b>Voting results for 
+            Sapele Ward 8 PU </b></div></center>
+    
+        <table id="table" border="2" border-style="dashed" height="100px" align="center" width="100%" bg-color="grey">
+            <thead>
+                <tr id="navbar">
+                    <th>Party</th>  
+
+                    <th>Scores</th> 
+                </tr>   
+            <%  if(data.length!=0){
+                var i =1;
+                data.forEach(datas => {
+                %>
+            <tr>  
+
+              <td><%= datas.party%></td>
+              <td><%= datas.score%></td>
+            </tr> 
+            <% i++;})%>
+            <%}%>
+            </thead> 
+        
+        
+        </div>    
+        
+    </table> 
+    <a href="/summed" class="btn btn-success">Local government result</a>
+    <a href="/last" class="btn btn-secondary">New PUR</a>
+    <style>
+        #table{
+            height: 70vh;
+            margin-top: 5%;
+            border-style: outset;
+            
+            
+        }
+        body{
+            font-weight: 200%;
+            background-color:white;
+            color: black;
+        }
+
+        #navbar{
+            background-color:greenyellow;
+            border-bottom: 100%;
+            border-bottom-left-radius: 100%;
+
+        }
+
+        .btn{
+            position: bottom;
+            margin-top: 3%;
+            
+        }
+
+        </style>
+    
+</body>
+</html>
