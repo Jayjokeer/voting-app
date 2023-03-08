@@ -35,7 +35,7 @@ app.get('/',async(req,res)=>{
         }
 
         const data= result
-        console.log(data)
+        
         res.render('home',{data:data})
     })
 })
@@ -47,7 +47,7 @@ app.get('/summed',(req,res)=>{
             throw err
         }
         let data = result
-        console.log({data})
+        
         res.render('summed',{data:data})
     })
 })
@@ -67,7 +67,7 @@ app.post('/last',(req,res)=>{
         if(err){
             throw err
         }
-        console.log(result)
+        
         res.redirect('/')
     })
 })
